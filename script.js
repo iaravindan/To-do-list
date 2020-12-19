@@ -32,7 +32,7 @@ function AddListItems(){
     inputbox.value="";
 
     addListListener();
-    addRemoveListener();
+    delbutton.onclick=removeParent;
 }
 
 //Toggling list item to Done Status
@@ -48,23 +48,7 @@ function ChangeListStatus(){
     this.classList.toggle("done");
 }
 
-//Removing List Item on button click
-function addRemoveListener(){
-    var libutton =document.querySelectorAll('li button');
-    for (var i=0;i<libutton.length;i++){
-        libutton[i].addEventListener("click",RemoveListItem);
-    }
-}
-
-function RemoveListItem(){
-    for(var i=0;i<li.length;i++){
-        this.parentNode.remove();
-    }
-}
-
-
-
-
-
-
-
+// //Removing List Item on button click
+function removeParent(event){
+	event.target.parentNode.remove();
+} 
